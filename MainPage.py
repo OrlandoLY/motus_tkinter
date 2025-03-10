@@ -1,6 +1,5 @@
-
-# Authors: JURDIC Lucas
-# Creation date: 2024/12/16
+# Authors: jean de la chapelle
+# Creation date: 2024/03/06
 # Description: Interface principale pour le jeu Motus.
 
 
