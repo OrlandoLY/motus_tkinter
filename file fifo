@@ -1,0 +1,29 @@
+class File:
+    def __init__(self):
+        self.elements = []
+
+    def estVide(self):
+        return len(self.elements) == 0
+
+    def premier(self):
+        if not self.estVide():
+            return self.elements[0]
+        return None
+
+    def défiler(self):
+        if not self.estVide():
+            return self.elements.pop(0)
+        return None
+
+    def enfiler(self, elt):
+        self.elements.append(elt)
+
+    def afficher(self):
+        for elt in self.elements:
+            print(elt)
+
+    def défilerJusqu’à(self, elt):
+        while self.elements and self.premier() != elt:
+            self.défiler()
+        if self.elements:
+            self.défiler()  # défiler l'élément elt mais ne le supprime pas
