@@ -1,0 +1,33 @@
+class Pile:
+    def __init__(self):
+        self.elements = []
+
+    def estVide(self):
+        return len(self.elements) == 0
+
+    def sommet(self):
+        if not self.estVide():
+            return self.elements[-1]
+        return None
+
+    def dépiler(self):
+        if not self.estVide():
+            return self.elements.pop()
+        return None
+
+    def empiler(self, elt):
+        self.elements.append(elt)
+
+    def afficher(self):
+        for elt in reversed(self.elements):
+            print(elt)
+
+    def dépilerKelts(self, k):
+        for _ in range(min(k, len(self.elements))):
+            self.dépiler()
+
+    def dépilerJusqu’à(self, elt):
+        while self.elements and self.sommet() != elt:
+            self.dépiler()
+        if self.elements:
+            self.dépiler()  # dépile l'élément elt mais ne le supprime pas
